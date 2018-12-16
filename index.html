@@ -20,7 +20,7 @@
       color: #9B9B9B;
     }
     p {
-      font-size: 30px;
+      font-size: 26px;
       line-height: 41px;
       letter-spacing: 0.08px;
       font-family: Avenir-light;
@@ -34,10 +34,14 @@
 
     .heading {
       font-family: Avenir-book;
-      font-size: 42px;
+      font-size: 32px;
       color: #9B9B9B;
       letter-spacing: 0.12px;
-      margin-bottom: 22px;
+      margin-bottom: 10px;
+    }
+
+    .bg-theme {
+      background-color: #9B9B9B !important;
     }
 
     .border {
@@ -45,7 +49,7 @@
     }
 
     .subSections {
-      margin-bottom: 22px;
+      margin-bottom: 76px;
     }
 
     .subSections img {
@@ -84,7 +88,7 @@
     hr {
       border-color: #9B9B9B;
       margin-bottom: 46px;
-      margin-top: 56px;
+      /* margin-top: 56p; */
     }
 
     #chammala {
@@ -116,7 +120,7 @@
 </head>
 <body class="container">
   <section id="intro">
-    <p class="">
+    <p class="col-10 p-0">
       &emsp; Aoa, hi, I am qasim from <span id="chammala">Chammala</span>, a village in the outskirts of Punjab in Pakistan.
       <br>
       &emsp; I am a passionate <span id="reader">reader</span>, <span id="developer">developer</span> and a <span id="designer">designer</span>. I make <span id="videos">videos</span> and shoot <span id="pictures">pictures</span> when I feel I should cheer the day up. I work on projects, that I believe can help <span id="ease">ease</span> our life.
@@ -124,23 +128,31 @@
     </p>
   </section>
 
-  <hr align="left" width="7%">
+  <div class="d-flex flex-wrap">
+    <div class="col-md-6 p-0 m-0">
 
-  <section class="subSections">
-    <p class="heading">portfolio</p>
-    <img src="images/p1.png" width="52px" alt="">
-    <img src="images/p2.png" width="42px" alt="">
-  </section>
+      <section class="subSections">
+        <p class="heading">portfolio</p>
+        <a href="http://www.amuslimstaxi.com" target="_blank"><img src="images/p1.png" width="42px" alt=""></a>
+        <a href="https://www.easyheal.co.uk" target="_blank"><img src="images/p2.png" width="42px" alt=""></a>
+      </section>
 
-  <hr align="left" width="7%">
+      <section class="subSections">
+        <p class="heading">accessible at</p>
+        <i class="icon fab fa-instagram"></i>
+        <i class="icon fab fa-facebook"></i>
+        <i class="icon fab fa-twitter-square"></i>
+        <i class="icon fab fa-linkedin"></i>
+      </section>
+    </div>
 
-  <section class="subSections">
-    <p class="heading">accessible at</p>
-    <i class="icon fab fa-instagram"></i>
-    <i class="icon fab fa-facebook"></i>
-    <i class="icon fab fa-twitter-square"></i>
-    <i class="icon fab fa-linkedin"></i>
-  </section>
+    <!-- <div class="col-md-6 p-0 m-0 d-flex align-items-center">
+      <div class="mx-auto px-4 text-center">
+        <p class="text-info" id="element">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+        <footer class="blockquote-footer text-center">Abida from <cite title="Source Title">easyheal.co.uk</cite></footer>
+    </div>
+    </div> -->
+  </div>
 
   <section id="footer" class="text-center">
     <img src="images/sign.png" height="46rem" alt="">
@@ -149,4 +161,15 @@
 
 
 </body>
+<!-- Load the script on the page. -->
+<script src="node_modules/typeit/dist/typeit.min.js">
+
+  var instance = new TypeIt('#element', {
+    strings: 'This is my string! and I am loading',
+    speed: 50,
+    autoStart: false
+  });
+
+</script>
+
 </html>
