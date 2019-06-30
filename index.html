@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
+
   <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143060089-3"></script>
 <script>
@@ -147,6 +147,10 @@
       padding-bottom: 6rem;
     }
 
+    .subSections {
+      overflow: scroll;
+    }
+
   </style>
 </head>
 <body class="container">
@@ -161,10 +165,15 @@
   </section>
 
   <div class="d-flex flex-wrap">
-    <div class="col-md-6 p-0 m-0">
+    <div class="col-md-10 p-0 m-0">
 
       <section class="subSections">
-        <p class="heading">portfolio</p>
+        <p class="heading">my progress</p>
+        <iframe title="Makerlog Embed" height="200" style="width: 450px" scrolling="no" frameborder="0" allowtransparency="true" src="https://api.getmakerlog.com/users/2347/stats_embed"></iframe>
+      </section>
+
+      <section class="subSections" style="margin-top:-2rem">
+        <p class="heading">my few projects</p>
         <a href="http://www.amuslimstaxi.com" ><img class=""  target="_blank" data-toggle="tooltip" data-placement="top" title="Get Help" src="images/p1.png" width="42px" alt=""></a>
         <a href="https://www.easyheal.co.uk" ><img class=""  target="_blank" data-toggle="tooltip" data-placement="top" title="Easy Heal" src="images/p2.png" width="42px" alt=""></a>
         <a href="https://www.zakatlists.com" ><img class=""  target="_blank" data-toggle="tooltip" data-placement="top" title="Zakat Lists" src="images/logo5.png" width="42px" alt=""></a>
@@ -172,7 +181,7 @@
       </section>
 
       <section class="subSections">
-        <p class="heading">accessible at</p>
+        <p class="heading">i am accessible at</p>
         <a href="https://www.instagram.com/qasimali_24/" target="_blank"><i class="icon fab fa-instagram"></i></a>
         <a href="https://www.facebook.com/qasimali22" target="_blank"><i class="icon fab fa-facebook"></i></a>
         <a href="https://twitter.com/punch__lines" target="_blank"><i class="icon fab fa-twitter-square"></i></a>
@@ -180,7 +189,7 @@
       </section>
     </div>
 
-    <div class="col-md-6 sig-block d-flex align-items-center justify-content-center flex-column h-100">
+    <div class="col-12 sig-block d-flex align-items-end justify-content-center flex-column h-100">
       <img src="images/sign.png" height="46rem" alt="">
     </div>
 
@@ -194,8 +203,7 @@
       $('img').tooltip({
         boundary: 'window',
         animation: false,
-
-       })
+      });
   </script>
 
 </body>
