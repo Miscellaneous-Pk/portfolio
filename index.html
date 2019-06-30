@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
   <title>Welcome</title>
   <style>
@@ -13,6 +13,10 @@
     @font-face {
       font-family: "mycustomfont";
       src: url(font/Avenir.ttc) format("truetype");
+    }
+
+    * {
+      font-family: Avenir-light;
     }
 
     body {
@@ -23,7 +27,6 @@
       font-size: 26px;
       line-height: 41px;
       letter-spacing: 0.08px;
-      font-family: Avenir-light;
     }
 
 
@@ -129,6 +132,7 @@
   </style>
 </head>
 <body class="container">
+
   <section id="intro">
     <p class="col-10 p-0">
       &emsp; Aoa, hi, I am qasim from <span id="chammala">Chammala</span>, a village in the outskirts of Punjab in Pakistan.
@@ -143,43 +147,40 @@
 
       <section class="subSections">
         <p class="heading">portfolio</p>
-        <a href="http://www.amuslimstaxi.com" target="_blank" class=""><img src="images/p1.png" width="42px" alt=""></a>
-        <a href="https://www.easyheal.co.uk" target="_blank"><img src="images/p2.png" width="42px" alt=""></a>
+        <a href="http://www.amuslimstaxi.com" ><img class="border-bottom"  target="_blank" data-toggle="tooltip" data-placement="top" title="Get Help" src="images/p1.png" width="42px" alt=""></a>
+        <a href="https://www.easyheal.co.uk" ><img class="border-bottom"  target="_blank" data-toggle="tooltip" data-placement="top" title="Easy Heal" src="images/p2.png" width="42px" alt=""></a>
+        <a href="https://www.zakatlists.com" ><img class="border-bottom"  target="_blank" data-toggle="tooltip" data-placement="top" title="Zakat Lists" src="images/logo5.png" width="42px" alt=""></a>
+
       </section>
 
       <section class="subSections">
         <p class="heading">accessible at</p>
-        <a href="https://www.instagram.com/qasimali_24/"><i class="icon fab fa-instagram"></i></a>
-        <a href="https://www.facebook.com/qasimali22"><i class="icon fab fa-facebook"></i></a>
-        <a href="https://twitter.com/punch__lines"><i class="icon fab fa-twitter-square"></i></a>
-        <a href="https://www.linkedin.com/in/qasim-ali-92b989146/"><i class="icon fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/qasimali_24/" target="_blank"><i class="icon fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/qasimali22" target="_blank"><i class="icon fab fa-facebook"></i></a>
+        <a href="https://twitter.com/punch__lines" target="_blank"><i class="icon fab fa-twitter-square"></i></a>
+        <a href="https://www.linkedin.com/in/qasim-ali-92b989146/" target="_blank"><i class="icon fab fa-linkedin"></i></a>
       </section>
     </div>
 
-    <!-- <div class="col-md-6 p-0 m-0 d-flex align-items-center">
-      <div class="mx-auto px-4 text-center">
-        <p class="text-info" id="element">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-        <footer class="blockquote-footer text-center">Abida from <cite title="Source Title">easyheal.co.uk</cite></footer>
-    </div>
-    </div> -->
   </div>
 
   <section id="footer" class="text-center">
     <img src="images/sign.png" height="46rem" alt="">
-    <small><br>copyrights - 2018</small>
+    <br><small>copyrights - 2019</small>
   </section>
 
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <script type="text/javascript">
+      $('img').tooltip({
+        boundary: 'window',
+        animation: false,
+
+       })
+  </script>
 
 </body>
-<!-- Load the script on the page. -->
-<script src="node_modules/typeit/dist/typeit.min.js">
-
-  var instance = new TypeIt('#element', {
-    strings: 'This is my string! and I am loading',
-    speed: 50,
-    autoStart: false
-  });
-
-</script>
 
 </html>
