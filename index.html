@@ -34,6 +34,11 @@
       display: flex;
       padding: 7px 1rem;
       align-items: center;
+      max-width: 1440px;
+      margin: auto;
+      left: 50%;
+      transform: translate(-50%);
+      z-index: 100;
     }
 
     nav > .brand-name {
@@ -105,6 +110,7 @@
       width: 100vw;
       max-width: 1440px;
       margin: auto;
+      position: relative;
     }
 
     .landing {
@@ -135,6 +141,10 @@
       height: 34px;
     }
 
+    .landing > button {
+      margin-top: 1rem
+    }
+
     .btn-primary {
       font-family: Montserrat;
       font-style: normal;
@@ -146,7 +156,7 @@
       text-align: center;
       color: #F2F2F2;
       background: #3F3D56;
-      padding: 2px 8px;
+      padding: 6px 8px;
       border-radius: 2px;
       border: 1px solid transparent;
     }
@@ -187,7 +197,23 @@
 
     }
 
-    @media (max-width: 1100px) {
+    @media (max-width: 1024px) {
+      .landing {
+        background: url(images/landing.svg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        min-height: 100vh;
+        padding-top: 4rem;
+      }
+
+      .btn-primary {
+        font-size: 21px;
+      }
+    }
+
+    @media (max-width: 768px) {
 
       .mobile {
         display: block;
@@ -203,7 +229,7 @@
 
       section {
         box-sizing: border-box;
-        padding: 0 8px;
+        padding: 0 12px;
       }
 
       .landing {
@@ -213,6 +239,20 @@
         -o-background-size: cover;
         background-size: cover;
         min-height: 100vh;
+        padding-top: 4rem;
+      }
+
+      .landing > p {
+        background: white;
+        font-size: 24px;
+      }
+
+      .landing > button {
+        margin-top: 9px;
+      }
+
+      .btn-primary {
+        font-size: 21px;
       }
 
     }
@@ -235,26 +275,30 @@
       </div>
     </ol>
   </nav>
-  <div class="nav-items-desktop desktop">
-    <svg width="262" height="248" viewBox="0 0 262 248" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M66 50.5L24.5 65.5V109.5L0.5 182L66 247.5L114.5 227L190 247.5L261.5 195.5V109.5L213 88.5L190 38L129 0L66 50.5Z" fill="#219653"/>
-    <path opacity="0.1" d="M66 50.5L24.5 65.5V109.5L0.5 182L66 247.5L114.5 227L190 247.5L261.5 195.5L158 129L135 38L129 0L66 50.5Z" fill="#060606"/>
-    </svg>
-
-
-    <li class="menu">Pricing</li>
-    <li class="menu">Procedures</li>
-    <li class="menu">Portfolio</li>
-  </div>
 
   <div class="container">
+
+    <div class="nav-items-desktop desktop">
+      <svg width="262" height="248" viewBox="0 0 262 248" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M66 50.5L24.5 65.5V109.5L0.5 182L66 247.5L114.5 227L190 247.5L261.5 195.5V109.5L213 88.5L190 38L129 0L66 50.5Z" fill="#219653"/>
+      <path opacity="0.1" d="M66 50.5L24.5 65.5V109.5L0.5 182L66 247.5L114.5 227L190 247.5L261.5 195.5L158 129L135 38L129 0L66 50.5Z" fill="#060606"/>
+      </svg>
+
+
+      <li class="menu">Pricing</li>
+      <li class="menu">Procedures</li>
+      <li class="menu">Portfolio</li>
+    </div>
 
     <section class="landing">
       <p>Hi, I am Qasim.</p>
       <p>I build websites.</p>
       <p>Settled in Gujranwala, Pakistan.</p>
-      <button type="button" name="button" class="btn-primary" style="margin-top: 1rem">
-        <p style="padding-right: 8px;">Contact me I am open for work.</p>
+      <button type="button" name="button" class="btn-primary" style="">
+        <p style="padding-right: 8px;">
+          <span class="desktop">Contact me I am open for work.</span>
+          <span class="mobile">Contact me.</span>
+        </p>
         <svg width="36" height="36" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M44 6H4C1.8 6 0 7.8 0 10V38C0 40.2 1.8 42 4 42H44C46.2 42 47.98 40.2 47.98 38L48 10C48 7.8 46.2 6 44 6ZM16 12C19.32 12 22 14.68 22 18C22 21.32 19.32 24 16 24C12.68 24 10 21.32 10 18C10 14.68 12.68 12 16 12ZM28 36H4V34C4 30 12 27.8 16 27.8C20 27.8 28 30 28 34V36ZM35.7 28H38.98L42 32L38.02 35.98C35.4 34.02 33.46 31.22 32.56 28C32.2 26.72 32 25.38 32 24C32 22.62 32.2 21.28 32.56 20C33.46 16.76 35.4 13.98 38.02 12.02L42 16L38.98 20H35.7C35.26 21.26 35 22.6 35 24C35 25.4 35.26 26.74 35.7 28V28Z" fill="#F2F2F2"/>
         </svg>
