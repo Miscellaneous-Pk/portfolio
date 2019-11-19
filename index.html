@@ -1,211 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143060089-3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-143060089-3');
-</script>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-  <title>Welcome</title>
-  <style>
-
-    @font-face {
-      font-family: "mycustomfont";
-      src: url(font/Avenir.ttc) format("truetype");
+  <title>Welcome @ Qasim</title>
+  <style type="text/css">
+    html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed,
+    figure, figcaption, footer, header, hgroup,
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+    	margin: 0;
+    	padding: 0;
+    	border: 0;
+    	font-size: 100%;
+    	font: inherit;
+    	vertical-align: baseline;
     }
 
-    * {
-      font-family: Avenir-light;
-    }
-
-    body {
-      background-color: #19293C;
-      color: #9B9B9B;
-    }
-    p {
-      font-size: 26px;
-      line-height: 41px;
-      letter-spacing: 0.08px;
-    }
-
-
-    #intro {
-      margin-top: 106px;
-      margin-bottom: 46px;
-    }
-
-    .heading {
-      font-family: Avenir-book;
-      font-size: 32px;
-      color: #9B9B9B;
-      letter-spacing: 0.12px;
-      margin-bottom: 10px;
-    }
-
-    .bg-theme {
-      background-color: #9B9B9B !important;
-    }
-
-    .border {
-      border: 1px solid red;
-    }
-
-    .subSections {
-      margin-bottom: 76px;
-    }
-
-    .subSections img {
-      margin-top: 20px;
-      margin-right: 35px;
-    }
-
-    .icon {
-      font-size: 30px;
-      margin-top: 10px;
-      margin-right: 15px;
-    }
-
-    .mx-auto {
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    #footer {
-      padding-top: 60px;
-      padding-bottom: 106px;
-    }
-
-    #footer img {
-      padding-bottom: 10px;
-    }
-
-    small {
-      font-family: Avenir-light;
-      font-size: 15px;
-      color: #9B9B9B;
-      letter-spacing: 0.12px;
-      margin-bottom: 22px;
-    }
-
-    hr {
-      border-color: #9B9B9B;
-      margin-bottom: 46px;
-      /* margin-top: 56p; */
-    }
-
-    #chammala {
-      color: #B8E986;
-    }
-    #reader {
-      color: #F5A623;
-    }
-    #developer {
-      color: #E16877;
-    }
-    #designer {
-      color: #FFFFFF;
-    }
-    #videos {
-      color: #F8E71C;
-    }
-    #pictures {
-      color: #C98FDD;
-    }
-    #ease {
-      color: #F8BE8B;
-    }
-    #friends {
-      color: #4ABAE2;
-    }
-
-    a {
-      text-decoration: none;
-      color: #9B9B9B;
-    }
-
-    a:hover {
-      text-decoration: none;
-      color: #F8E71C;
-    }
-
-    .sig-block {
+    nav {
+      position: absolute;
+      width: 100vw;
+      box-sizing: border-box;
+      display: flex;
+      padding: 7px 1rem;
       align-items: center;
-      align-self: flex-end;
-      margin: 0 auto;
-      padding-bottom: 6rem;
     }
 
-    .subSections {
-      overflow: scroll;
+    nav > .brand-name {
+
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 15px;
+      line-height: 27px;
+      /* identical to box height */
+
+      color: #385465;
+      flex-grow: 1;
+      padding-left: 8px;
     }
 
+    .mobile {
+      display: none;
+    }
+
+    .desktop {
+      display: block;
+    }
+
+    ol > button {
+      padding: 2px 8px;
+      font-size: 14px;
+      border: 1px solid transparent;
+      font-family: Montserrat;
+      background: #3F3D56;
+      font-weight: bold;
+
+      font-style: normal;
+
+      /* Gray 6 */
+      color: #F2F2F2;
+    }
+
+    .d-none {
+      display: none;
+    }
+
+    .mobile > .nav-items {
+      position: absolute;
+      text-align: right;
+      right: 0;
+      /* padding-right: 10px; */
+      margin-top: 7px;
+      /* padding: 0px 8px; */
+      box-sizing: border-box;
+    }
+
+    .mobile > .nav-items > * {
+      text-decoration: none;
+      list-style-type: none;
+      font-family: Montserrat;
+      font-size: 15px;
+      font-weight: bold;
+      width: 100%;
+      border-bottom: 1px solid lightgrey;
+      box-sizing: border-box;
+      width: 100vw;
+      padding: 11px 8px;
+      color: #3F3D56;
+      background: ghostwhite;
+    }
+
+    .container {
+      width: 100vw;
+      max-width: 1440px;
+      margin: auto;
+    }
+
+    .landing {
+      height: 100vh;
+      min-height: 700px;
+      background: url(images/landing.svg) no-repeat center right 4%;
+      -webkit-background-size: contain;
+      -moz-background-size: contain;
+      -o-background-size: contain;
+      background-size: contain;
+      padding-top: 5rem;
+    }
+
+    .landing > p {
+
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 26px;
+      line-height: 200%;
+      /* or 46px */
+
+      color: #385465;
+    }
+
+    .landing > svg {
+      margin-left: 8px;
+      height: 34px;
+    }
+
+    .btn-primary {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 15px;
+      line-height: 178.4%;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: #F2F2F2;
+      background: #3F3D56;
+      padding: 2px 8px;
+      border-radius: 2px;
+      border: 1px solid transparent;
+    }
+
+    section {
+      box-sizing: border-box;
+      padding: 0 1rem;
+    }
+
+    .nav-items-desktop {
+      position: absolute;
+      right: 2rem;
+      top: 2rem;
+      width: 262px;
+      height: 248px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+    }
+
+    .nav-items-desktop > svg {
+      position: absolute;
+      z-index: -10;
+    }
+
+    .nav-items-desktop > li {
+      padding-right: 5rem;
+
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 19px;
+      line-height: 178.4%;
+
+      color: #F2F2F2;
+      list-style: none;
+
+    }
+
+    @media (max-width: 1100px) {
+
+      .mobile {
+        display: block;
+      }
+
+      .desktop {
+        display: none;
+      }
+
+      nav {
+        padding: 7px 8px;
+      }
+
+      section {
+        box-sizing: border-box;
+        padding: 0 8px;
+      }
+
+      .landing {
+        background: url(images/landing.svg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        min-height: 100vh;
+      }
+
+    }
   </style>
 </head>
-<body class="container">
+<body>
+  <nav>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM16.5 16H8C6.34 16 5 14.66 5 13C5 11.34 6.34 10 8 10L8.14 10.01C8.58 8.28 10.13 7 12 7C14.21 7 16 8.79 16 11H16.5C17.88 11 19 12.12 19 13.5C19 14.88 17.88 16 16.5 16Z" fill="#385465"/>
+    </svg>
+    <p class="brand-name">qasimali.xyz</p>
+    <ol class="mobile">
+      <button class="toggler" target-class="nav-items" type="button" name="button">
+        Menu
+      </button>
+      <div class="nav-items d-none">
+        <li>Pricing</li>
+        <li>Procedures</li>
+        <li>Portfolio</li>
+      </div>
+    </ol>
+  </nav>
+  <div class="nav-items-desktop desktop">
+    <svg width="262" height="248" viewBox="0 0 262 248" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M66 50.5L24.5 65.5V109.5L0.5 182L66 247.5L114.5 227L190 247.5L261.5 195.5V109.5L213 88.5L190 38L129 0L66 50.5Z" fill="#219653"/>
+    <path opacity="0.1" d="M66 50.5L24.5 65.5V109.5L0.5 182L66 247.5L114.5 227L190 247.5L261.5 195.5L158 129L135 38L129 0L66 50.5Z" fill="#060606"/>
+    </svg>
 
-  <section id="intro">
-    <p class="col-10 p-0">
-      &emsp; Aoa, hi, I am qasim from <span id="chammala">Chammala</span>, a village in the outskirts of Punjab in Pakistan.
-      <br>
-      &emsp; I am a passionate <span id="reader">reader</span>, <span id="developer">developer</span> and a <span id="designer">designer</span>. I make <span id="videos">videos</span> and shoot <span id="pictures">pictures</span> when I feel I should cheer the day up. I work on projects, that I believe can help <span id="ease">ease</span> our life.
-  		If you are a passionate one-of-the-above stuff, you can approach me and we will make good <span id="friends">friends</span>. Or you can check my progress <a href="/dailyprogress.html">here</a>.
-    </p>
-  </section>
 
-  <div class="d-flex flex-wrap">
-    <div class="col-md-10 p-0 m-0">
+    <li class="menu">Pricing</li>
+    <li class="menu">Procedures</li>
+    <li class="menu">Portfolio</li>
+  </div>
 
-      <section class="subSections">
-        <p class="heading">my progress</p>
-        <iframe title="Makerlog Embed" height="200" style="width: 450px" scrolling="no" frameborder="0" allowtransparency="true" src="https://api.getmakerlog.com/users/2347/stats_embed"></iframe>
-      </section>
+  <div class="container">
 
-      <section class="subSections" style="margin-top:-2rem">
-        <p class="heading">my few projects</p>
-        <a href="http://www.amuslimstaxi.com" ><img class=""  target="_blank" data-toggle="tooltip" data-placement="top" title="Get Help" src="images/p1.png" width="42px" alt=""></a>
-        <a href="https://www.easyheal.co.uk" ><img class=""  target="_blank" data-toggle="tooltip" data-placement="top" title="Easy Heal" src="images/p2.png" width="42px" alt=""></a>
-        <a href="https://www.zakatlists.com" ><img class=""  target="_blank" data-toggle="tooltip" data-placement="top" title="Zakat Lists" src="images/logo5.png" width="42px" alt=""></a>
-
-      </section>
-
-      <section class="subSections">
-        <p class="heading">i am accessible at</p>
-        <a href="https://www.instagram.com/qasimali_24/" target="_blank"><i class="icon fab fa-instagram"></i></a>
-        <a href="https://www.facebook.com/qasimali22" target="_blank"><i class="icon fab fa-facebook"></i></a>
-        <a href="https://twitter.com/punch__lines" target="_blank"><i class="icon fab fa-twitter-square"></i></a>
-        <a href="https://www.linkedin.com/in/qasim-ali-92b989146/" target="_blank"><i class="icon fab fa-linkedin"></i></a>
-      </section>
-    </div>
-
-    <div class="col-12 sig-block d-flex align-items-end justify-content-center flex-column h-100">
-      <img src="images/sign.png" height="46rem" alt="">
-    </div>
+    <section class="landing">
+      <p>Hi, I am Qasim.</p>
+      <p>I build websites.</p>
+      <p>Settled in Gujranwala, Pakistan.</p>
+      <button type="button" name="button" class="btn-primary" style="margin-top: 1rem">
+        <p style="padding-right: 8px;">Contact me I am open for work.</p>
+        <svg width="36" height="36" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M44 6H4C1.8 6 0 7.8 0 10V38C0 40.2 1.8 42 4 42H44C46.2 42 47.98 40.2 47.98 38L48 10C48 7.8 46.2 6 44 6ZM16 12C19.32 12 22 14.68 22 18C22 21.32 19.32 24 16 24C12.68 24 10 21.32 10 18C10 14.68 12.68 12 16 12ZM28 36H4V34C4 30 12 27.8 16 27.8C20 27.8 28 30 28 34V36ZM35.7 28H38.98L42 32L38.02 35.98C35.4 34.02 33.46 31.22 32.56 28C32.2 26.72 32 25.38 32 24C32 22.62 32.2 21.28 32.56 20C33.46 16.76 35.4 13.98 38.02 12.02L42 16L38.98 20H35.7C35.26 21.26 35 22.6 35 24C35 25.4 35.26 26.74 35.7 28V28Z" fill="#F2F2F2"/>
+        </svg>
+      </button>
+    </section>
 
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
   <script type="text/javascript">
-      $('img').tooltip({
-        boundary: 'window',
-        animation: false,
-      });
+    $(document).on('click','.toggler',function() {
+      let target = $(this).attr('target-class');
+      $(`.${target}`).toggleClass('d-none');
+      console.log($(`.${target}.d-none`).length);
+      if ($(`.${target}.d-none`).length > 0) return $(this).html('Menu');
+      $(this).html('Close')
+    })
   </script>
-
 </body>
-
 </html>
