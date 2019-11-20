@@ -104,7 +104,7 @@
       box-sizing: border-box;
       width: 100vw;
       padding: 11px 8px;
-      color: #3F3D56;
+      color: #385465;
       background: ghostwhite;
     }
 
@@ -144,7 +144,7 @@
       font-weight: bold;
       font-size: 46px;
       line-height: 178.4%;
-      color: #3F3D56;
+      color: #385465;
     }
 
     .landing > p, .pricing > p, .portfolio  > p, .procedures  > p{
@@ -217,66 +217,6 @@
 
       color: #F2F2F2;
       list-style: none;
-
-    }
-
-    @media (max-width: 1024px) {
-      .landing {
-        background: url(images/landing.svg) no-repeat center center fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-        min-height: 100vh;
-        padding-top: 4rem;
-      }
-
-      .btn-primary {
-        font-size: 21px;
-      }
-    }
-
-    @media (max-width: 768px) {
-
-      .mobile {
-        display: block;
-      }
-
-      .desktop {
-        display: none;
-      }
-
-      nav {
-        padding: 7px 8px;
-      }
-
-      section {
-        box-sizing: border-box;
-        padding: 0 12px;
-      }
-
-      .landing {
-        background: url(images/landing.svg) no-repeat center center fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-        min-height: 100vh;
-        padding-top: 4rem;
-      }
-
-      .landing > p {
-        background: white;
-        font-size: 24px;
-      }
-
-      .landing > button {
-        margin-top: 9px;
-      }
-
-      .btn-primary {
-        font-size: 21px;
-      }
 
     }
 
@@ -380,7 +320,7 @@
       margin: 6px 0;
     }
 
-    .proc-card > p:nth-last-child(2) {
+    .proc-card > p:nth-last-child(3) {
       font-family: Montserrat;
       font-style: normal;
       font-weight: normal;
@@ -390,7 +330,7 @@
       color: #385465;
     }
 
-    .proc-card > p:nth-last-child(1) {
+    .proc-card > p:nth-last-child(2) {
 
       font-family: Montserrat;
       font-style: normal;
@@ -401,6 +341,18 @@
       /* or 30px */
 
       color: #385465;
+    }
+
+    .proc-card > p:nth-last-child(1) {
+      font-family: Montserrat;
+      color: #385465;
+      opacity: 0.7;
+      margin-top: 10px;
+    }
+
+    .proc-card small {
+      font-size: 66%;
+      opacity: 0.7;
     }
 
     .portfolio {
@@ -441,7 +393,7 @@
       font-weight: normal;
       font-size: 60px;
       line-height: 178.4%;
-      color: #000000;
+      color: #385465;
     }
 
     .port-cards a {
@@ -464,6 +416,7 @@
       font-size: 17px;
       line-height: 178.4%;
       color: #385465;
+      margin-top: 20px;
     }
 
     .footer > p {
@@ -474,6 +427,11 @@
       line-height: 178.4%;
       color: #385465;
       padding: 10px 0;
+      max-width: 550px;
+    }
+
+    .footer > button > p {
+      padding-right: 8px;
     }
 
     .social-icons {
@@ -493,6 +451,222 @@
       align-items: center;
       justify-content: flex-end;
       padding-bottom: 2rem;
+    }
+
+
+
+
+    @media (max-width: 1024px) {
+      .landing {
+        background: url(images/landing.svg) no-repeat center center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        padding-top: 6rem;
+      }
+
+      .btn-primary {
+        font-size: 21px;
+      }
+
+      .pricing {
+        height: auto;
+        min-height: auto;
+      }
+
+      .pricing > p {
+        margin-top: 4rem;
+      }
+
+      .prices-grid > * {
+        margin-bottom: 20px;
+      }
+
+      .procedures {
+        margin-top: 2rem;
+      }
+
+      .procedures > *:nth-child(1) {
+        position: initial;
+      }
+
+      .procedures > *:nth-child(2) {
+        position: initial;
+        width: 80%;
+        padding-top: 2rem;
+        text-align: left;
+      }
+
+      .procedures > *:nth-child(3) {
+        right: 1rem;
+        z-index: -10;
+      }
+
+      .proc-cards {
+        padding-top: 2rem;
+      }
+
+      .portfolio {
+        min-height: auto;
+      }
+
+      .portfolio > svg {
+        z-index: -10;
+      }
+
+
+    }
+
+    @media (max-width: 768px) {
+
+      .nav-items-desktop {
+        right: 1rem;
+      }
+
+      section > h1 {
+        font-size: 36px;
+      }
+
+      .port-cards > div {
+        min-width: 200px;
+        margin-bottom: 18px;
+        padding: 24px;
+      }
+
+      .prices-grid, .port-cards {
+        overflow: scroll;
+        padding: 74px 4px 0 4px;
+      }
+
+      .landing > p, .pricing > p, .portfolio > p, .procedures > p {
+        font-size: 23px;
+      }
+
+      .portfolio > p {
+        max-width: 63%;
+        padding-top: 5rem;
+      }
+
+      .procedures > *:nth-child(2) {
+        width: 63%;
+      }
+
+      .proc-card {
+        max-width: 77%;
+      }
+    }
+
+    @media (max-width: 736px) {
+
+      .mobile {
+        display: block;
+      }
+
+      .desktop {
+        display: none;
+      }
+
+      nav {
+        padding: 7px 8px;
+      }
+
+      section {
+        box-sizing: border-box;
+        padding: 0 12px;
+      }
+
+      section > h1 {
+        font-size: 30px;
+      }
+
+      .landing {
+        background: url(images/landing.svg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        min-height: 100vh;
+        padding-top: 4rem;
+      }
+
+      .landing > p {
+        background: white;
+        font-size: 24px;
+      }
+
+      .pricing > p, .portfolio > p, .procedures > p {
+        font-size: 20px;
+      }
+
+      .pricing > p {
+        margin-top: 1rem;
+      }
+
+      .landing > button {
+        margin-top: 9px;
+      }
+
+      .btn-primary {
+        font-size: 21px;
+      }
+
+      .prices-grid, .port-cards {
+        padding-top: 40px;
+      }
+
+      .proc-cards {
+        padding-top: 1rem;
+      }
+
+      .proc-card {
+        max-width: 100%;
+      }
+
+      .proc-card > svg {
+        height: 38px;
+        width: 38px;
+      }
+
+      .procedures > *:nth-child(2) {
+        width: 100%;
+      }
+
+      .proc-card > p:nth-last-child(2) {
+        max-width: 100%;
+      }
+
+      .proc-card > p:nth-last-child(3) {
+        font-size: 24px;
+      }
+
+      .portfolio > p {
+        max-width: 100%;
+      }
+
+      .port-cards > div {
+        padding: 18px;
+      }
+
+      .footer > button {
+        font-size: 17px;
+        text-align: right;
+        align-items: flex-start;
+      }
+
+      .footer > button > p {
+        padding-right: 16px;
+        font-size: 14px;
+      }
+
+      .footer > button > svg {
+        padding-right: 12px;
+      }
+
+      .footer > p {
+        text-align: center;
+      }
+
     }
   </style>
 </head>
@@ -530,8 +704,8 @@
 
     <section class="landing">
       <p>Hi, I am Qasim.</p>
-      <p>I build websites.</p>
-      <p>Settled in Gujranwala, Pakistan.</p>
+      <p>I build websites. I am</p>
+      <p>settled in Gujranwala, Pakistan.</p>
       <button type="button" name="button" class="btn-primary" style="">
         <p style="padding-right: 8px;">
           <span class="desktop">Contact me I am open for work.</span>
@@ -545,15 +719,7 @@
 
     <section class="pricing">
       <h1>Pricing</h1>
-      <p>Please these prices are non negotiable.</p>
-      <button type="button" name="button" class="btn-primary" style="">
-        <p style="padding-right: 8px;">
-          <span>Contact me.</span>
-        </p>
-        <svg width="36" height="36" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M44 6H4C1.8 6 0 7.8 0 10V38C0 40.2 1.8 42 4 42H44C46.2 42 47.98 40.2 47.98 38L48 10C48 7.8 46.2 6 44 6ZM16 12C19.32 12 22 14.68 22 18C22 21.32 19.32 24 16 24C12.68 24 10 21.32 10 18C10 14.68 12.68 12 16 12ZM28 36H4V34C4 30 12 27.8 16 27.8C20 27.8 28 30 28 34V36ZM35.7 28H38.98L42 32L38.02 35.98C35.4 34.02 33.46 31.22 32.56 28C32.2 26.72 32 25.38 32 24C32 22.62 32.2 21.28 32.56 20C33.46 16.76 35.4 13.98 38.02 12.02L42 16L38.98 20H35.7C35.26 21.26 35 22.6 35 24C35 25.4 35.26 26.74 35.7 28V28Z" fill="#F2F2F2"/>
-        </svg>
-      </button>
+      <p>What I am going to charge you for making a website ?</p>
 
       <div class="prices-grid">
         <div>
@@ -621,8 +787,9 @@
           <svg width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M63.25 16.445L50.025 5.34747L46.3163 9.74622L59.5412 20.8437L63.25 16.445ZM22.655 9.74622L18.975 5.34747L5.75 16.4162L9.45875 20.815L22.655 9.74622ZM35.9375 23H31.625V40.25L45.2812 48.4437L47.4375 44.9075L35.9375 38.0937V23ZM34.5 11.5C20.2113 11.5 8.625 23.0862 8.625 37.375C8.625 51.6637 20.1825 63.25 34.5 63.25C48.7887 63.25 60.375 51.6637 60.375 37.375C60.375 23.0862 48.7887 11.5 34.5 11.5ZM34.5 57.5C23.3738 57.5 14.375 48.5012 14.375 37.375C14.375 26.2487 23.3738 17.25 34.5 17.25C45.6262 17.25 54.625 26.2487 54.625 37.375C54.625 48.5012 45.6262 57.5 34.5 57.5Z" fill="#3F3D56"/>
           </svg>
-          <p><small>Step</small><b> 1 - brain storming</b></p>
+          <p><small style="">Step</small><b> 1 - brain storming</b></p>
           <p>We will sit together (on skype if you are not in Gujranwala). Brain storm on problems that your website should / can address. and Make good notes.</p>
+          <p>Duration: 1 - 2 Weeks</p>
         </div>
 
         <div class="proc-card">
@@ -632,6 +799,7 @@
 
           <p><small>Step</small><b> 2 - documentation</b></p>
           <p>Formulate requirement documents. These documents binds software developers with clients. A necessary step to make sure we stick to the project. </p>
+          <p>Duration: 1 - 2 Weeks</p>
         </div>
 
         <div class="proc-card">
@@ -641,6 +809,7 @@
 
           <p><small>Step</small><b> 3 - designing</b></p>
           <p>You pay 50 % advance and I start working on design. I will take a week or so to complete it. As soon as I complete a design, I will ask you for approval.</p>
+          <p>Duration: 1 - 2 Weeks</p>
         </div>
 
         <div class="proc-card">
@@ -650,6 +819,7 @@
 
           <p><small>Step</small><b> 4 - 1st prototype</b></p>
           <p>I will complete first functional prototype of entire project. You will highlight alterations that needs to be addressed. I will get back to work to fix them.</p>
+          <p>Duration: 2 - 4 Weeks</p>
         </div>
 
         <div class="proc-card">
@@ -659,6 +829,7 @@
 
           <p><small>Step</small><b> 5 - 2nd prototype</b></p>
           <p>I deliver 2nd Prototype. This one is final from me. If you still find certain changes in it. I will fix them. But for major changes that takes more then a week to fix, I will charge 50 USD per major fix.</p>
+          <p>Duration: 2 Weeks</p>
         </div>
 
         <div class="proc-card">
@@ -668,18 +839,10 @@
 
           <p><small>Step</small><b> 6 - deployment</b></p>
           <p>I deploy your project with all features on server and hand you necessary configuration files to give you full ownership of your project. </p>
+          <p>Duration: 2 Weeks</p>
         </div>
 
       </div>
-
-      <button type="button" name="button" class="btn-primary" style="margin-top: 10px">
-        <p style="padding-right: 8px;">
-          <span>Contact me.</span>
-        </p>
-        <svg width="36" height="36" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M44 6H4C1.8 6 0 7.8 0 10V38C0 40.2 1.8 42 4 42H44C46.2 42 47.98 40.2 47.98 38L48 10C48 7.8 46.2 6 44 6ZM16 12C19.32 12 22 14.68 22 18C22 21.32 19.32 24 16 24C12.68 24 10 21.32 10 18C10 14.68 12.68 12 16 12ZM28 36H4V34C4 30 12 27.8 16 27.8C20 27.8 28 30 28 34V36ZM35.7 28H38.98L42 32L38.02 35.98C35.4 34.02 33.46 31.22 32.56 28C32.2 26.72 32 25.38 32 24C32 22.62 32.2 21.28 32.56 20C33.46 16.76 35.4 13.98 38.02 12.02L42 16L38.98 20H35.7C35.26 21.26 35 22.6 35 24C35 25.4 35.26 26.74 35.7 28V28Z" fill="#F2F2F2"/>
-        </svg>
-      </button>
 
     </section>
 
@@ -753,7 +916,7 @@
 
 
       <button type="button" name="button" class="btn-primary" style="">
-        <p style="padding-right: 8px;">
+        <p style="">
           <span>If you want to create a quality product contact me.</span>
         </p>
         <svg width="36" height="36" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
