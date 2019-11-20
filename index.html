@@ -87,9 +87,8 @@
       position: absolute;
       text-align: right;
       right: 0;
-      /* padding-right: 10px; */
       margin-top: 7px;
-      /* padding: 0px 8px; */
+      border-bottom: 1px dashed #385465;
       box-sizing: border-box;
     }
 
@@ -100,12 +99,16 @@
       font-size: 15px;
       font-weight: bold;
       width: 100%;
-      border-bottom: 1px solid lightgrey;
       box-sizing: border-box;
       width: 100vw;
-      padding: 11px 8px;
+      padding: 11px 15px;
       color: #385465;
-      background: ghostwhite;
+      background: white;
+    }
+
+    .nav-items a, .nav-items-desktop a {
+      text-decoration: none;
+      color: inherit;
     }
 
     .container {
@@ -134,7 +137,7 @@
       -moz-background-size: inherit;
       -o-background-size: inherit;
       background-size: inherit;
-      margin-top: 3rem;
+      padding-top: 3rem;
       position: relative;
     }
 
@@ -199,6 +202,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: flex-end;
+      z-index: 50;
     }
 
     .nav-items-desktop > svg {
@@ -271,7 +275,7 @@
 
     .procedures {
       position: relative;
-      /* margin-top: 3rem; */
+      padding-top: 3rem;
       min-height: 100vh;
     }
 
@@ -279,7 +283,7 @@
       position: absolute;
       right: 21rem;
       top: 2rem;
-      z-index: 50;
+      z-index: 20;
     }
 
     .procedures > *:nth-child(2) {
@@ -287,7 +291,7 @@
       right: 406px;
       top: 7rem;
       width: 171px;
-      z-index: 50;
+      z-index: 20;
       text-align: center;
     }
 
@@ -295,7 +299,7 @@
       position: absolute;
       right: 9rem;
       top: 46rem;
-      z-index: 50;
+      z-index: -10;
     }
 
     .proc-cards {
@@ -428,6 +432,7 @@
       color: #385465;
       padding: 10px 0;
       max-width: 550px;
+      text-align: center;
     }
 
     .footer > button > p {
@@ -546,6 +551,15 @@
       .portfolio > p {
         max-width: 63%;
         padding-top: 5rem;
+      }
+
+      .pricing {
+        margin-top: 0px;
+        padding-top: 3rem;
+      }
+
+      .procedures {
+        padding-top: 3rem;
       }
 
       .procedures > *:nth-child(2) {
@@ -681,9 +695,10 @@
         Menu
       </button>
       <div class="nav-items d-none">
-        <li>Pricing</li>
-        <li>Procedures</li>
-        <li>Portfolio</li>
+        <li><a href="#landing">Home</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#procedures">Procedures</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
       </div>
     </ol>
   </nav>
@@ -696,13 +711,13 @@
       <path opacity="0.1" d="M66 50.5L24.5 65.5V109.5L0.5 182L66 247.5L114.5 227L190 247.5L261.5 195.5L158 129L135 38L129 0L66 50.5Z" fill="#060606"/>
       </svg>
 
-
-      <li class="menu">Pricing</li>
-      <li class="menu">Procedures</li>
-      <li class="menu">Portfolio</li>
+      <li class="menu"><a href="#landing">Home</a></li>
+      <li class="menu"><a href="#pricing">Pricing</a></li>
+      <li class="menu"><a href="#procedures">Procedures</a></li>
+      <li class="menu"><a href="#portfolio">Portfolio</a></li>
     </div>
 
-    <section class="landing">
+    <section id="landing" class="landing">
       <p>Hi, I am Qasim.</p>
       <p>I build websites. I am</p>
       <p>settled in Gujranwala, Pakistan.</p>
@@ -717,7 +732,7 @@
       </button>
     </section>
 
-    <section class="pricing">
+    <section id="pricing" class="pricing">
       <h1>Pricing</h1>
       <p>What I am going to charge you for making a website ?</p>
 
@@ -756,7 +771,7 @@
       </div>
     </section>
 
-    <section class="procedures">
+    <section id="procedures" class="procedures">
       <h1>Procedures we shall follow</h1>
       <p>During making of your website we will go through the 6 necessary steps to make sure we curate “Quality”.</p>
       <svg width="473" height="790" viewBox="0 0 473 790" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -846,7 +861,7 @@
 
     </section>
 
-    <section class="portfolio">
+    <section id="portfolio" class="portfolio">
       <h1>Portfolio</h1>
       <svg width="929" height="413" viewBox="0 0 929 413" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M705.565 107.951L730.545 117.194L739.751 92.243L714.772 83L705.565 107.951Z" fill="#27AE60"/>
@@ -924,7 +939,7 @@
         </svg>
       </button>
 
-      <p>Designed and developed by qasim himself while traveling from Makkah to Madina on 18 Nov 2019</p>
+      <p>Designed and developed by qasim while traveling from Makkah to Madina on 18 Nov 2019</p>
       <div class="social-icons">
         <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="17.5" cy="17.5" r="17" stroke="#385465"/>
@@ -954,6 +969,26 @@
       if ($(`.${target}.d-none`).length > 0) return $(this).html('Menu');
       $(this).html('Close')
     })
+
+    $("a").on('click', function(event) {
+
+      if (this.hash !== "") {
+        // Prevent default anchor click behavior
+        event.preventDefault();
+
+        // Store hash
+        var hash = this.hash;
+
+        // Using jQuery's animate() method to add smooth page scroll
+        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 600, function(){
+          window.location.hash = hash;
+        });
+      } // End if
+      if ($(this).closest('.nav-items')) $('.toggler').trigger('click');
+    });
   </script>
 </body>
 </html>
