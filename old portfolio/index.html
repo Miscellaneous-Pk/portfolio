@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900&display=swap" rel="stylesheet">
+  <title>Welcome @ Qasim</title>
+  <style type="text/css">
+    html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed,
+    figure, figcaption, footer, header, hgroup,
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+    	margin: 0;
+    	padding: 0;
+    	border: 0;
+    	font-size: 100%;
+    	font: inherit;
+    	vertical-align: baseline;
+    }
+
+    nav {
+      position: fixed;
+      background: white;
+      width: 100vw;
+      box-sizing: border-box;
+      display: flex;
+      padding: 7px 1rem;
+      align-items: center;
+      max-width: 1440px;
+      margin: auto;
+      left: 50%;
+      transform: translate(-50%);
+      z-index: 100;
+    }
+
+    nav > .brand-name {
+
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 15px;
+      line-height: 27px;
+      /* identical to box height */
+
+      color: #385465;
+      flex-grow: 1;
+      padding-left: 8px;
+    }
+
+    .mobile {
+      display: none;
+    }
+
+    .desktop {
+      display: block;
+    }
+
+    ol > button {
+      padding: 2px 8px;
+      font-size: 14px;
+      border: 1px solid transparent;
+      font-family: Montserrat;
+      background: #3F3D56;
+      font-weight: bold;
+
+      font-style: normal;
+
+      /* Gray 6 */
+      color: #F2F2F2;
+    }
+
+    .d-none {
+      display: none;
+    }
+
+    .mobile > .nav-items {
+      position: absolute;
+      text-align: right;
+      right: 0;
+      margin-top: 7px;
+      border-bottom: 1px dashed #385465;
+      box-sizing: border-box;
+    }
+
+    .mobile > .nav-items > * {
+      text-decoration: none;
+      list-style-type: none;
+      font-family: Montserrat;
+      font-size: 15px;
+      font-weight: bold;
+      width: 100%;
+      box-sizing: border-box;
+      width: 100vw;
+      padding: 11px 15px;
+      color: #385465;
+      background: white;
+    }
+
+    .nav-items a, .nav-items-desktop a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 100vw;
+      max-width: 1440px;
+      margin: auto;
+      position: relative;
+    }
+
+    .landing {
+      height: 100vh;
+      min-height: 700px;
+      background: url(images/landing.svg) no-repeat center right 4%;
+      -webkit-background-size: contain;
+      -moz-background-size: contain;
+      -o-background-size: contain;
+      background-size: contain;
+      padding-top: 5rem;
+    }
+
+    .pricing {
+      height: 100vh;
+      min-height: 800px;
+      background: url(images/pricingbg.svg) no-repeat top -7rem right 21rem;
+      -webkit-background-size: inherit;
+      -moz-background-size: inherit;
+      -o-background-size: inherit;
+      background-size: inherit;
+      padding-top: 3rem;
+      position: relative;
+    }
+
+    section > h1 {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 46px;
+      line-height: 178.4%;
+      color: #385465;
+    }
+
+    .landing > p, .pricing > p, .portfolio  > p, .procedures  > p{
+
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 26px;
+      line-height: 200%;
+      /* or 46px */
+
+      color: #385465;
+    }
+
+    .landing > svg {
+      margin-left: 8px;
+      height: 34px;
+    }
+
+    .landing > button {
+      margin-top: 1rem
+    }
+
+    .btn-primary {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 15px;
+      line-height: 178.4%;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: #F2F2F2;
+      background: #3F3D56;
+      padding: 6px 8px;
+      border-radius: 2px;
+      border: 1px solid transparent;
+    }
+
+    section {
+      box-sizing: border-box;
+      padding: 0 1rem;
+    }
+
+    .nav-items-desktop {
+      position: fixed;
+      right: 2rem;
+      top: 43px;
+      width: 262px;
+      height: 248px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      z-index: 50;
+    }
+
+    .nav-items-desktop > svg {
+      position: absolute;
+      z-index: -10;
+    }
+
+    .nav-items-desktop > li {
+      padding-right: 5rem;
+
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 19px;
+      line-height: 178.4%;
+
+      color: #F2F2F2;
+      list-style: none;
+
+    }
+
+    .pricing > p {
+      margin-top: 238px;
+    }
+
+    .prices-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-gap: 16px;
+      padding-top: 74px;
+      text-align: center;
+      color: #385465;
+    }
+
+    .prices-grid > * {
+      grid-column: auto;
+      background: #FFFFFF;
+      box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25);
+      padding: 1rem 1rem;
+    }
+
+    .prices-grid p {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 15px;
+      line-height: 27px;
+    }
+
+    .prices-grid h4 {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 72px;
+      line-height: 178.4%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .prices-grid small {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 20px;
+      padding-right: 9px;
+      margin-top: -14px;
+      align-self: self-end;
+      display: flex;
+    }
+
+    .procedures {
+      position: relative;
+      padding-top: 3rem;
+      min-height: 100vh;
+    }
+
+    .procedures > *:nth-child(1) {
+      position: absolute;
+      right: 21rem;
+      top: 2rem;
+      z-index: 20;
+    }
+
+    .procedures > *:nth-child(2) {
+      position: absolute;
+      right: 406px;
+      top: 7rem;
+      width: 171px;
+      z-index: 20;
+      text-align: center;
+    }
+
+    .procedures > *:nth-child(3) {
+      position: absolute;
+      right: 9rem;
+      top: 46rem;
+      z-index: -10;
+    }
+
+    .proc-cards {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      padding-top: 8rem;
+    }
+
+    .proc-cards > * {
+      margin: 9px 0;
+    }
+
+    .proc-card {
+      max-width: 638px;
+      padding: 14px 25px;
+      background: #FFFFFF;
+      box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25);
+    }
+
+    .proc-card > * {
+      margin: 6px 0;
+    }
+
+    .proc-card > p:nth-last-child(3) {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 28px;
+      line-height: 178.4%;
+
+      color: #385465;
+    }
+
+    .proc-card > p:nth-last-child(2) {
+
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 17px;
+      line-height: 178.4%;
+      max-width: 80%;
+      /* or 30px */
+
+      color: #385465;
+    }
+
+    .proc-card > p:nth-last-child(1) {
+      font-family: Montserrat;
+      color: #385465;
+      opacity: 0.7;
+      margin-top: 10px;
+    }
+
+    .proc-card small {
+      font-size: 66%;
+      opacity: 0.7;
+    }
+
+    .portfolio {
+      position: relative;
+      min-height: 100vh;
+      padding-top: 3rem;
+    }
+
+    .portfolio > svg {
+      position: absolute;
+      top: 2rem;
+      right: 5rem;
+    }
+
+    .portfolio > p {
+      max-width: 583px;
+      padding-top: 5rem;
+    }
+
+
+    .port-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: auto;
+      grid-gap: 16px;
+      padding-top: 5rem;
+    }
+
+    .port-cards > div {
+      padding: 34px;
+      background: white;
+      box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25);
+    }
+
+    .port-cards h2 {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 60px;
+      line-height: 178.4%;
+      color: #385465;
+    }
+
+    .port-cards a {
+      text-decoration: none;
+    }
+
+    .port-cards b {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 15px;
+      line-height: 178.4%;
+      color: #385465;
+    }
+
+    .port-cards > div > p:nth-last-child(1) {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 17px;
+      line-height: 178.4%;
+      color: #385465;
+      margin-top: 20px;
+    }
+
+    .footer > p {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 15px;
+      line-height: 178.4%;
+      color: #385465;
+      padding: 10px 0;
+      max-width: 550px;
+      text-align: center;
+    }
+
+    .footer > button > p {
+      padding-right: 8px;
+    }
+
+    .social-icons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .social-icons > * {
+      margin: 0px 3px;
+    }
+
+    .footer {
+      min-height: 396px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding-bottom: 2rem;
+    }
+
+
+
+
+    @media (max-width: 1024px) {
+      .landing {
+        background: url(images/landing.svg) no-repeat center center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        padding-top: 6rem;
+      }
+
+      .btn-primary {
+        font-size: 21px;
+      }
+
+      .pricing {
+        height: auto;
+        min-height: auto;
+      }
+
+      .pricing > p {
+        margin-top: 4rem;
+      }
+
+      .prices-grid > * {
+        margin-bottom: 20px;
+      }
+
+      .procedures {
+        margin-top: 2rem;
+      }
+
+      .procedures > *:nth-child(1) {
+        position: initial;
+      }
+
+      .procedures > *:nth-child(2) {
+        position: initial;
+        width: 80%;
+        padding-top: 2rem;
+        text-align: left;
+      }
+
+      .procedures > *:nth-child(3) {
+        right: 1rem;
+        z-index: -10;
+      }
+
+      .proc-cards {
+        padding-top: 2rem;
+      }
+
+      .portfolio {
+        min-height: auto;
+      }
+
+      .portfolio > svg {
+        z-index: -10;
+      }
+
+
+    }
+
+    @media (max-width: 768px) {
+
+      .nav-items-desktop {
+        right: 1rem;
+      }
+
+      section > h1 {
+        font-size: 36px;
+      }
+
+      .port-cards > div {
+        min-width: 200px;
+        margin-bottom: 18px;
+        padding: 24px;
+      }
+
+      .prices-grid, .port-cards {
+        overflow: scroll;
+        padding: 74px 4px 0 4px;
+      }
+
+      .landing > p, .pricing > p, .portfolio > p, .procedures > p {
+        font-size: 23px;
+      }
+
+      .portfolio > p {
+        max-width: 63%;
+        padding-top: 5rem;
+      }
+
+      .pricing {
+        margin-top: 0px;
+        padding-top: 3rem;
+      }
+
+      .procedures {
+        padding-top: 3rem;
+      }
+
+      .procedures > *:nth-child(2) {
+        width: 63%;
+      }
+
+      .proc-card {
+        max-width: 77%;
+      }
+    }
+
+    @media (max-width: 736px) {
+
+      .mobile {
+        display: block;
+      }
+
+      .desktop {
+        display: none;
+      }
+
+      nav {
+        padding: 7px 8px;
+      }
+
+      section {
+        box-sizing: border-box;
+        padding: 0 12px;
+      }
+
+      section > h1 {
+        font-size: 30px;
+      }
+
+      .landing {
+        background: url(images/landing.svg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        min-height: 100vh;
+        padding-top: 4rem;
+      }
+
+      .landing > p {
+        background: white;
+        font-size: 24px;
+      }
+
+      .pricing > p, .portfolio > p, .procedures > p {
+        font-size: 20px;
+      }
+
+      .pricing > p {
+        margin-top: 1rem;
+      }
+
+      .landing > button {
+        margin-top: 9px;
+      }
+
+      .btn-primary {
+        font-size: 21px;
+      }
+
+      .prices-grid, .port-cards {
+        padding-top: 40px;
+      }
+
+      .proc-cards {
+        padding-top: 1rem;
+      }
+
+      .proc-card {
+        max-width: 100%;
+      }
+
+      .proc-card > svg {
+        height: 38px;
+        width: 38px;
+      }
+
+      .procedures > *:nth-child(2) {
+        width: 100%;
+      }
+
+      .proc-card > p:nth-last-child(2) {
+        max-width: 100%;
+      }
+
+      .proc-card > p:nth-last-child(3) {
+        font-size: 24px;
+      }
+
+      .portfolio > p {
+        max-width: 100%;
+      }
+
+      .port-cards > div {
+        padding: 18px;
+      }
+
+      .footer > button {
+        font-size: 17px;
+        text-align: right;
+        align-items: flex-start;
+      }
+
+      .footer > button > p {
+        padding-right: 16px;
+        font-size: 14px;
+      }
+
+      .footer > button > svg {
+        padding-right: 12px;
+      }
+
+      .footer > p {
+        text-align: center;
+      }
+
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM16.5 16H8C6.34 16 5 14.66 5 13C5 11.34 6.34 10 8 10L8.14 10.01C8.58 8.28 10.13 7 12 7C14.21 7 16 8.79 16 11H16.5C17.88 11 19 12.12 19 13.5C19 14.88 17.88 16 16.5 16Z" fill="#385465"/>
+    </svg>
+    <p class="brand-name">qasimali.xyz</p>
+    <ol class="mobile">
+      <button class="toggler" target-class="nav-items" type="button" name="button">
+        Menu
+      </button>
+      <div class="nav-items d-none">
+        <li><a href="#landing">Home</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#procedures">Procedures</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+      </div>
+    </ol>
+  </nav>
+
+  <div class="container">
+
+    <div class="nav-items-desktop desktop">
+      <svg width="262" height="248" viewBox="0 0 262 248" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M66 50.5L24.5 65.5V109.5L0.5 182L66 247.5L114.5 227L190 247.5L261.5 195.5V109.5L213 88.5L190 38L129 0L66 50.5Z" fill="#219653"/>
+      <path opacity="0.1" d="M66 50.5L24.5 65.5V109.5L0.5 182L66 247.5L114.5 227L190 247.5L261.5 195.5L158 129L135 38L129 0L66 50.5Z" fill="#060606"/>
+      </svg>
+
+      <li class="menu"><a href="#landing">Home</a></li>
+      <li class="menu"><a href="#pricing">Pricing</a></li>
+      <li class="menu"><a href="#procedures">Procedures</a></li>
+      <li class="menu"><a href="#portfolio">Portfolio</a></li>
+    </div>
+
+    <section id="landing" class="landing">
+      <p>Hi, I am Qasim.</p>
+      <p>I build websites. I am</p>
+      <p>settled in Gujranwala, Pakistan.</p>
+      <button type="button" name="button" class="btn-primary" style="">
+        <p style="padding-right: 8px;">
+          <span class="desktop">Contact me I am open for work.</span>
+          <span class="mobile">Contact me.</span>
+        </p>
+        <svg width="36" height="36" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M44 6H4C1.8 6 0 7.8 0 10V38C0 40.2 1.8 42 4 42H44C46.2 42 47.98 40.2 47.98 38L48 10C48 7.8 46.2 6 44 6ZM16 12C19.32 12 22 14.68 22 18C22 21.32 19.32 24 16 24C12.68 24 10 21.32 10 18C10 14.68 12.68 12 16 12ZM28 36H4V34C4 30 12 27.8 16 27.8C20 27.8 28 30 28 34V36ZM35.7 28H38.98L42 32L38.02 35.98C35.4 34.02 33.46 31.22 32.56 28C32.2 26.72 32 25.38 32 24C32 22.62 32.2 21.28 32.56 20C33.46 16.76 35.4 13.98 38.02 12.02L42 16L38.98 20H35.7C35.26 21.26 35 22.6 35 24C35 25.4 35.26 26.74 35.7 28V28Z" fill="#F2F2F2"/>
+        </svg>
+      </button>
+    </section>
+
+    <section id="pricing" class="pricing">
+      <h1>Pricing</h1>
+      <p>What I am going to charge you for making a website ?</p>
+
+      <div class="prices-grid">
+        <div>
+          <p>BASIC</p>
+          <h4><small>$</small>500</h4>
+          <p>Single Page Website</p>
+          <p>Delivery time 2 Weeks</p>
+          <p>3 Revisions</p>
+        </div>
+
+        <div>
+          <p>STANDARD</p>
+          <h4><small>$</small>1000</h4>
+          <p>4 Page Website</p>
+          <p>Delivery time 4 Weeks</p>
+          <p>3 Revisions</p>
+        </div>
+
+        <div>
+          <p>PREMIUM</p>
+          <h4><small>$</small>2000</h4>
+          <p>E Commerce Level</p>
+          <p>Delivery time 8 Weeks</p>
+          <p>3 Revisions</p>
+        </div>
+
+        <div>
+          <p>ENTERPRISE</p>
+          <h4><small>$</small>3000</h4>
+          <p>Business Level</p>
+          <p>Delivery time 10 Weeks</p>
+          <p>3 Revisions</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="procedures" class="procedures">
+      <h1>Procedures we shall follow</h1>
+      <p>During making of your website we will go through the 6 necessary steps to make sure we curate “Quality”.</p>
+      <svg width="473" height="790" viewBox="0 0 473 790" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M379.297 88.0054L354.189 79.2447L345.413 104.396L370.521 113.156L379.297 88.0054Z" fill="#27AE60"/>
+      <path d="M390.778 104.105L360.291 93.4665L370.947 62.926L401.435 73.564L390.778 104.105ZM362.08 92.6012L389.916 102.314L399.646 74.4293L371.809 64.7164L362.08 92.6012Z" fill="#3F3D56"/>
+      <path d="M231.552 150.783L233.097 124.193L206.545 122.675L205 149.265L231.552 150.783Z" fill="#27AE60"/>
+      <path d="M219.235 166.275L221.111 133.988L253.353 135.831L251.477 168.119L219.235 166.275ZM222.431 135.472L220.719 164.952L250.157 166.635L251.869 137.155L222.431 135.472Z" fill="#3F3D56"/>
+      <path d="M442.552 408.108L444.097 381.518L417.545 380L416 406.59L442.552 408.108Z" fill="#27AE60"/>
+      <path d="M430.235 423.6L432.111 391.313L464.353 393.156L462.477 425.444L430.235 423.6ZM433.431 392.797L431.719 422.277L461.157 423.96L462.869 394.48L433.431 392.797Z" fill="#3F3D56"/>
+      <path d="M421.164 556.278L418.467 529.824L391.966 532.526L394.663 558.98L421.164 556.278Z" fill="#27AE60"/>
+      <path d="M411.444 573.497L408.168 541.374L440.348 538.093L443.623 570.216L411.444 573.497ZM409.71 542.628L412.7 571.958L442.082 568.962L439.091 539.632L409.71 542.628Z" fill="#3F3D56"/>
+      <path d="M301.721 449.027L326.463 439.165L316.593 414.469L291.851 424.331L301.721 449.027Z" fill="#27AE60"/>
+      <path d="M282.471 444.431L312.514 432.455L324.499 462.443L294.456 474.419L282.471 444.431ZM311.729 434.28L284.298 445.214L295.241 472.594L322.672 461.66L311.729 434.28Z" fill="#3F3D56"/>
+      <path d="M264.616 35.9674L288.171 23.5737L275.82 -5.22517e-06L252.265 12.3936L264.616 35.9674Z" fill="#27AE60"/>
+      <path d="M245.022 33.3881L273.624 18.3387L288.622 46.9639L260.02 62.0133L245.022 33.3881ZM273.033 20.2376L246.918 33.9784L260.611 60.1144L286.727 46.3736L273.033 20.2376Z" fill="#3F3D56"/>
+      <path d="M147.846 643.366L121.588 647.568L125.797 673.872L152.055 669.67L147.846 643.366Z" fill="#27AE60"/>
+      <path d="M165.591 652.089L133.707 657.192L128.596 625.252L160.48 620.15L165.591 652.089ZM134.871 655.581L163.983 650.923L159.316 621.76L130.204 626.419L134.871 655.581Z" fill="#3F3D56"/>
+      <path d="M47.5826 768.733L36.3252 744.594L12.2325 755.857L23.4899 779.996L47.5826 768.733Z" fill="#27AE60"/>
+      <path d="M44.0927 788.214L30.423 758.902L59.6784 745.226L73.3481 774.537L44.0927 788.214ZM32.2893 759.582L44.7703 786.345L71.4818 773.857L59.0008 747.095L32.2893 759.582Z" fill="#3F3D56"/>
+      <path d="M22.2062 651.977L37.0596 629.89L15.0014 615L0.148039 637.087L22.2062 651.977Z" fill="#27AE60"/>
+      <path d="M3.73442 659.004L21.7706 632.185L48.5556 650.265L30.5194 677.085L3.73442 659.004ZM22.151 634.137L5.68318 658.624L30.139 675.133L46.6068 650.645L22.151 634.137Z" fill="#3F3D56"/>
+      </svg>
+
+
+      <div class="proc-cards">
+
+        <div class="proc-card">
+          <svg width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M63.25 16.445L50.025 5.34747L46.3163 9.74622L59.5412 20.8437L63.25 16.445ZM22.655 9.74622L18.975 5.34747L5.75 16.4162L9.45875 20.815L22.655 9.74622ZM35.9375 23H31.625V40.25L45.2812 48.4437L47.4375 44.9075L35.9375 38.0937V23ZM34.5 11.5C20.2113 11.5 8.625 23.0862 8.625 37.375C8.625 51.6637 20.1825 63.25 34.5 63.25C48.7887 63.25 60.375 51.6637 60.375 37.375C60.375 23.0862 48.7887 11.5 34.5 11.5ZM34.5 57.5C23.3738 57.5 14.375 48.5012 14.375 37.375C14.375 26.2487 23.3738 17.25 34.5 17.25C45.6262 17.25 54.625 26.2487 54.625 37.375C54.625 48.5012 45.6262 57.5 34.5 57.5Z" fill="#3F3D56"/>
+          </svg>
+          <p><small style="">Step</small><b> 1 - brain storming</b></p>
+          <p>We will sit together (on skype if you are not in Gujranwala). Brain storm on problems that your website should / can address. and Make good notes.</p>
+          <p>Duration: 1 - 2 Weeks</p>
+        </div>
+
+        <div class="proc-card">
+          <svg width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M57.5 17.25H46V11.5C46 8.30875 43.4413 5.75 40.25 5.75H28.75C25.5587 5.75 23 8.30875 23 11.5V17.25H11.5C8.30875 17.25 5.77875 19.8087 5.77875 23L5.75 54.625C5.75 57.8163 8.30875 60.375 11.5 60.375H57.5C60.6913 60.375 63.25 57.8163 63.25 54.625V23C63.25 19.8087 60.6913 17.25 57.5 17.25ZM40.25 17.25H28.75V11.5H40.25V17.25Z" fill="#3F3D56"/>
+          </svg>
+
+          <p><small>Step</small><b> 2 - documentation</b></p>
+          <p>Formulate requirement documents. These documents binds software developers with clients. A necessary step to make sure we stick to the project. </p>
+          <p>Duration: 1 - 2 Weeks</p>
+        </div>
+
+        <div class="proc-card">
+          <svg width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M51.75 11.5V8.625C51.75 7.04375 50.4563 5.75 48.875 5.75H14.375C12.7937 5.75 11.5 7.04375 11.5 8.625V20.125C11.5 21.7063 12.7937 23 14.375 23H48.875C50.4563 23 51.75 21.7063 51.75 20.125V17.25H54.625V28.75H25.875V60.375C25.875 61.9563 27.1687 63.25 28.75 63.25H34.5C36.0813 63.25 37.375 61.9563 37.375 60.375V34.5H60.375V11.5H51.75Z" fill="#3F3D56"/>
+          </svg>
+
+          <p><small>Step</small><b> 3 - designing</b></p>
+          <p>You pay 50 % advance and I start working on design. I will take a week or so to complete it. As soon as I complete a design, I will ask you for approval.</p>
+          <p>Duration: 1 - 2 Weeks</p>
+        </div>
+
+        <div class="proc-card">
+          <svg width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M34.4991 5.80753C18.6579 5.80753 5.80664 18.6588 5.80664 34.5C5.80664 50.3413 18.6579 63.1925 34.4991 63.1925C50.3404 63.1925 63.1916 50.3413 63.1916 34.5C63.1916 18.6588 50.3404 5.80753 34.4991 5.80753ZM33.0041 57.5V39.5025H22.9991L37.3741 11.5V29.4975H47.0054L33.0041 57.5Z" fill="#3F3D56"/>
+          </svg>
+
+          <p><small>Step</small><b> 4 - 1st prototype</b></p>
+          <p>I will complete first functional prototype of entire project. You will highlight alterations that needs to be addressed. I will get back to work to fix them.</p>
+          <p>Duration: 2 - 4 Weeks</p>
+        </div>
+
+        <div class="proc-card">
+          <svg width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M34.4712 5.75C18.6012 5.75 5.75 18.63 5.75 34.5C5.75 50.37 18.6012 63.25 34.4712 63.25C50.37 63.25 63.25 50.37 63.25 34.5C63.25 18.63 50.37 5.75 34.4712 5.75ZM54.395 23H45.9138C44.9938 19.4062 43.6713 15.9563 41.9463 12.765C47.2363 14.5763 51.635 18.2563 54.395 23ZM34.5 11.615C36.8862 15.065 38.755 18.8888 39.9912 23H29.0088C30.245 18.8888 32.1138 15.065 34.5 11.615ZM12.2475 40.25C11.7875 38.41 11.5 36.4837 11.5 34.5C11.5 32.5163 11.7875 30.59 12.2475 28.75H21.965C21.735 30.6475 21.5625 32.545 21.5625 34.5C21.5625 36.455 21.735 38.3525 21.965 40.25H12.2475ZM14.605 46H23.0862C24.0062 49.5938 25.3287 53.0437 27.0537 56.235C21.7637 54.4237 17.365 50.7725 14.605 46V46ZM23.0862 23H14.605C17.365 18.2275 21.7637 14.5763 27.0537 12.765C25.3287 15.9563 24.0062 19.4062 23.0862 23V23ZM34.5 57.385C32.1138 53.935 30.245 50.1112 29.0088 46H39.9912C38.755 50.1112 36.8862 53.935 34.5 57.385ZM41.2275 40.25H27.7725C27.5137 38.3525 27.3125 36.455 27.3125 34.5C27.3125 32.545 27.5137 30.6187 27.7725 28.75H41.2275C41.4863 30.6187 41.6875 32.545 41.6875 34.5C41.6875 36.455 41.4863 38.3525 41.2275 40.25ZM41.9463 56.235C43.6713 53.0437 44.9938 49.5938 45.9138 46H54.395C51.635 50.7437 47.2363 54.4237 41.9463 56.235V56.235ZM47.035 40.25C47.265 38.3525 47.4375 36.455 47.4375 34.5C47.4375 32.545 47.265 30.6475 47.035 28.75H56.7525C57.2125 30.59 57.5 32.5163 57.5 34.5C57.5 36.4837 57.2125 38.41 56.7525 40.25H47.035Z" fill="#3F3D56"/>
+          </svg>
+
+          <p><small>Step</small><b> 5 - 2nd prototype</b></p>
+          <p>I deliver 2nd Prototype. This one is final from me. If you still find certain changes in it. I will fix them. But for major changes that takes more then a week to fix, I will charge 50 USD per major fix.</p>
+          <p>Duration: 2 Weeks</p>
+        </div>
+
+        <div class="proc-card">
+          <svg width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M34.5 61.3813L30.3313 57.5863C15.525 44.16 5.75 35.305 5.75 24.4375C5.75 15.5825 12.7075 8.625 21.5625 8.625C26.565 8.625 31.3662 10.9538 34.5 14.6338C37.6338 10.9538 42.435 8.625 47.4375 8.625C56.2925 8.625 63.25 15.5825 63.25 24.4375C63.25 35.305 53.475 44.16 38.6687 57.615L34.5 61.3813Z" fill="#3F3D56"/>
+          </svg>
+
+          <p><small>Step</small><b> 6 - deployment</b></p>
+          <p>I deploy your project with all features on server and hand you necessary configuration files to give you full ownership of your project. </p>
+          <p>Duration: 2 Weeks</p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section id="portfolio" class="portfolio">
+      <h1>Portfolio</h1>
+      <svg width="929" height="413" viewBox="0 0 929 413" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M705.565 107.951L730.545 117.194L739.751 92.243L714.772 83L705.565 107.951Z" fill="#27AE60"/>
+        <path d="M694.345 91.6476L724.677 102.871L713.498 133.169L683.166 121.945L694.345 91.6476ZM722.872 103.701L695.178 93.4529L684.971 121.116L712.665 131.364L722.872 103.701Z" fill="#3F3D56"/>
+        <path d="M705.565 107.951L730.545 117.194L739.751 92.243L714.772 83L705.565 107.951Z" fill="#27AE60"/>
+        <path d="M694.345 91.6476L724.677 102.871L713.498 133.169L683.166 121.945L694.345 91.6476ZM722.872 103.701L695.178 93.4529L684.971 121.116L712.665 131.364L722.872 103.701Z" fill="#3F3D56"/>
+        <path d="M31.7384 23.9335L5.78027 18.163L-0.000252323 44.1664L25.9579 49.9369L31.7384 23.9335Z" fill="#27AE60"/>
+        <path d="M45.02 38.5825L13.4993 31.5755L20.5186 0L52.0392 7.007L45.02 38.5825ZM15.175 30.5073L43.9547 36.905L50.3635 8.0752L21.5838 1.67751L15.175 30.5073Z" fill="#3F3D56"/>
+        <path d="M421.871 130.588L414.633 105L389 112.251L396.238 137.838L421.871 130.588Z" fill="#27AE60"/>
+        <path d="M415.278 149.23L406.489 118.16L437.614 109.355L446.403 140.426L415.278 149.23ZM408.225 119.128L416.249 147.497L444.668 139.458L436.643 111.089L408.225 119.128Z" fill="#3F3D56"/>
+        <path d="M31.7384 23.9335L5.78027 18.163L-0.000252323 44.1664L25.9579 49.9369L31.7384 23.9335Z" fill="#27AE60"/>
+        <path d="M45.02 38.5825L13.4993 31.5755L20.5186 0L52.0392 7.007L45.02 38.5825ZM15.175 30.5073L43.9547 36.905L50.3635 8.0752L21.5838 1.67751L15.175 30.5073Z" fill="#3F3D56"/>
+        <path d="M421.871 130.588L414.633 105L389 112.251L396.238 137.838L421.871 130.588Z" fill="#27AE60"/>
+        <path d="M415.278 149.23L406.489 118.16L437.614 109.355L446.403 140.426L415.278 149.23ZM408.225 119.128L416.249 147.497L444.668 139.458L436.643 111.089L408.225 119.128Z" fill="#3F3D56"/>
+        <path d="M896.889 386.278L902.468 412.322L928.468 406.728L922.89 380.684L896.889 386.278Z" fill="#27AE60"/>
+        <path d="M904.644 368.069L911.418 399.694L879.846 406.487L873.072 374.862L904.644 368.069ZM909.751 398.614L903.566 369.739L874.739 375.941L880.924 404.816L909.751 398.614Z" fill="#3F3D56"/>
+        <path d="M896.889 386.278L902.468 412.322L928.468 406.728L922.89 380.684L896.889 386.278Z" fill="#27AE60"/>
+        <path d="M904.644 368.069L911.418 399.694L879.846 406.487L873.072 374.862L904.644 368.069ZM909.751 398.614L903.566 369.739L874.739 375.941L880.924 404.816L909.751 398.614Z" fill="#3F3D56"/>
+      </svg>
+      <p>I have built numerous websites over past 3 years, since I started learning to make websites. To count them:-</p>
+
+      <div class="port-cards">
+
+        <div>
+          <h2>01</h2>
+          <p><a href="https://easyheal.co.uk"><b>easyheal.co.uk</b></a></p>
+          <p>
+            Delivered in ~ 2018 end <br>
+            Project Cost: 200 GBP <br>
+            Time took: 4 weeks <br>
+            Client is Uk based.
+          </p>
+        </div>
+
+        <div>
+          <h2>02</h2>
+          <p><a href="http://naturaltherapy.no"><b>naturaltherapy.no</b></a></p>
+          <p>
+            Delivered in Aug 2019 <br>
+            Project Cost: 400 USD <br>
+            Time took: 8 weeks <br>
+            Client is Norway based.
+          </p>
+        </div>
+
+        <div>
+          <h2>03</h2>
+          <p><a href="http://abasyn.herokuapp.com"><b>abasyn.herokuapp.com</b></a></p>
+          <p>Hobby project that keeps my class fellows updated about ongoing assignments and quizes. It helps me stick to books that my studies does not get effected.</p>
+        </div>
+
+        <div>
+          <h2>04</h2>
+          <p><ahref="http://zakatlists.com"><b>zakatlists.com</b></a></p>
+          <p>Hobby project. It handles fund raising while allowing easy payment transfers. </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="footer">
+
+      <svg style="margin:auto;" width="58" height="45" viewBox="0 0 58 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32.8708 25.5878L25.6328 0L0.00042123 7.2506L7.23841 32.8384L32.8708 25.5878Z" fill="#27AE60"/>
+      <path d="M26.2782 44.2304L17.4892 13.1595L48.6143 4.35522L57.4032 35.4261L26.2782 44.2304ZM19.2246 14.1276L27.2493 42.4967L55.6678 34.458L47.6431 6.08893L19.2246 14.1276Z" fill="#3F3D56"/>
+      </svg>
+
+
+      <button type="button" name="button" class="btn-primary" style="">
+        <p style="">
+          <span>If you want to create a quality product contact me.</span>
+        </p>
+        <svg width="36" height="36" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M44 6H4C1.8 6 0 7.8 0 10V38C0 40.2 1.8 42 4 42H44C46.2 42 47.98 40.2 47.98 38L48 10C48 7.8 46.2 6 44 6ZM16 12C19.32 12 22 14.68 22 18C22 21.32 19.32 24 16 24C12.68 24 10 21.32 10 18C10 14.68 12.68 12 16 12ZM28 36H4V34C4 30 12 27.8 16 27.8C20 27.8 28 30 28 34V36ZM35.7 28H38.98L42 32L38.02 35.98C35.4 34.02 33.46 31.22 32.56 28C32.2 26.72 32 25.38 32 24C32 22.62 32.2 21.28 32.56 20C33.46 16.76 35.4 13.98 38.02 12.02L42 16L38.98 20H35.7C35.26 21.26 35 22.6 35 24C35 25.4 35.26 26.74 35.7 28V28Z" fill="#F2F2F2"/>
+        </svg>
+      </button>
+
+      <p>Designed and developed by qasim while traveling from Makkah to Madina on 18 Nov 2019</p>
+      <div class="social-icons">
+        <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="17.5" cy="17.5" r="17" stroke="#385465"/>
+        <path d="M22.3447 19.125L22.8632 15.8674H19.621V13.7535C19.621 12.8623 20.0739 11.9936 21.526 11.9936H23V9.22008C23 9.22008 21.6624 9 20.3835 9C17.7134 9 15.9681 10.5602 15.9681 13.3847V15.8674H13V19.125H15.9681V27H19.621V19.125H22.3447Z" fill="#385465"/>
+        </svg>
+
+        <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="17.5" cy="17.5" r="17" stroke="#385465"/>
+        <path d="M25.1498 13.7383C25.1612 13.9023 25.1612 14.0664 25.1612 14.2305C25.1612 19.2344 21.4493 25 14.665 25C12.5749 25 10.6333 24.3789 9 23.3008C9.29697 23.3359 9.58247 23.3477 9.89086 23.3477C11.6155 23.3477 13.2031 22.75 14.4708 21.7305C12.849 21.6953 11.4898 20.6055 11.0216 19.1055C11.25 19.1406 11.4784 19.164 11.7183 19.164C12.0495 19.164 12.3807 19.1172 12.6891 19.0352C10.9987 18.6836 9.73094 17.1601 9.73094 15.3203V15.2734C10.222 15.5547 10.7932 15.7305 11.3984 15.7539C10.4048 15.0742 9.75379 13.914 9.75379 12.6015C9.75379 11.8984 9.9365 11.2539 10.2563 10.6914C12.0723 12.9883 14.802 14.4882 17.8629 14.6523C17.8058 14.3711 17.7716 14.0781 17.7716 13.7852C17.7716 11.6992 19.4162 10 21.4607 10C22.5228 10 23.4822 10.457 24.1561 11.1953C24.9898 11.0313 25.7893 10.7148 26.4975 10.2813C26.2233 11.1602 25.6409 11.8985 24.8756 12.3672C25.618 12.2852 26.3376 12.0742 27 11.7813C26.4975 12.5312 25.8693 13.1992 25.1498 13.7383V13.7383Z" fill="#385465"/>
+        </svg>
+
+        <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="17.5" cy="17.5" r="17" stroke="#385465"/>
+        <path d="M14.4532 24.725L8.27824 18.6235C7.90725 18.2569 7.90725 17.6626 8.27824 17.296L9.62171 15.9684C9.99269 15.6018 10.5942 15.6018 10.9652 15.9684L15.125 20.0787L24.0348 11.2749C24.4058 10.9084 25.0073 10.9084 25.3783 11.2749L26.7218 12.6025C27.0927 12.969 27.0927 13.5634 26.7218 13.93L15.7968 24.7251C15.4257 25.0916 14.8242 25.0916 14.4532 24.725V24.725Z" fill="#385465"/>
+        </svg>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    $(document).on('click','.toggler',function() {
+      let target = $(this).attr('target-class');
+      $(`.${target}`).toggleClass('d-none');
+      console.log($(`.${target}.d-none`).length);
+      if ($(`.${target}.d-none`).length > 0) return $(this).html('Menu');
+      $(this).html('Close')
+    })
+
+    $("a").on('click', function(event) {
+
+      if (this.hash !== "") {
+        // Prevent default anchor click behavior
+        event.preventDefault();
+
+        // Store hash
+        var hash = this.hash;
+
+        // Using jQuery's animate() method to add smooth page scroll
+        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 600, function(){
+          window.location.hash = hash;
+        });
+      } // End if
+      if ($(this).closest('.nav-items')) $('.toggler').trigger('click');
+    });
+  </script>
+</body>
+</html>
